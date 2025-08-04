@@ -1,0 +1,1550 @@
+app:
+  description: ''
+  icon: 📔
+  icon_background: '#FFE4E8'
+  mode: workflow
+  name: Article_Summary
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.1.0@539dc0dde8ecaa84e61b8eeb154c3bb7fbc9caa80afd83763dd5860a725d2742
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: inlei/mistral_ocr:0.0.1@6d51d18e999e6609b26202a409108834c89d5f33475ff1261cd1b9ccb36ab265
+kind: app
+version: 0.3.1
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1754275775364-source-1754288216777-target
+      source: '1754275775364'
+      sourceHandle: source
+      target: '1754288216777'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1754288216777-source-1754288836223-target
+      source: '1754288216777'
+      sourceHandle: source
+      target: '1754288836223'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1754293522491'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1754293522491start-source-1754293548640-target
+      source: 1754293522491start
+      sourceHandle: source
+      target: '1754293548640'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1754288836223-source-1754293522491-target
+      source: '1754288836223'
+      sourceHandle: source
+      target: '1754293522491'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: llm
+      id: 1754293522491-source-1754294482431-target
+      source: '1754293522491'
+      sourceHandle: source
+      target: '1754294482431'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: iteration
+      id: 1754288836223-source-1754294800439-target
+      source: '1754288836223'
+      sourceHandle: source
+      target: '1754294800439'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1754294800439'
+        sourceType: iteration-start
+        targetType: llm
+      id: 1754294800439start-source-1754295009332-target
+      source: 1754294800439start
+      sourceHandle: source
+      target: '1754295009332'
+      targetHandle: target
+      type: custom
+      zIndex: 1002
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: iteration
+        targetType: llm
+      id: 1754294800439-source-1754295119798-target
+      source: '1754294800439'
+      sourceHandle: source
+      target: '1754295119798'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1754297756839-source-1754306410872-target
+      source: '1754297756839'
+      sourceHandle: source
+      target: '1754306410872'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1754294482431-source-1754311850684-target
+      source: '1754294482431'
+      sourceHandle: source
+      target: '1754311850684'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: llm
+      id: 1754306410872-source-1754311850684-target
+      source: '1754306410872'
+      sourceHandle: source
+      target: '1754311850684'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1754311850684-source-1754312643085-target
+      source: '1754311850684'
+      sourceHandle: source
+      target: '1754312643085'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1754312643085-source-1754314355707-target
+      source: '1754312643085'
+      sourceHandle: source
+      target: '1754314355707'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1754295119798-source-1754297756839-target
+      source: '1754295119798'
+      sourceHandle: source
+      target: '1754297756839'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: paper
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: paper
+      height: 89
+      id: '1754275775364'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Upload a single file for OCR processing. Only one document can
+              be processed at a time. Supports PDF documents and common image formats.
+            ja_JP: Upload a single file for OCR processing. Only one document can
+              be processed at a time. Supports PDF documents and common image formats.
+            pt_BR: Upload a single file for OCR processing. Only one document can
+              be processed at a time. Supports PDF documents and common image formats.
+            zh_Hans: 上传单个文件进行 OCR 处理。每次只能处理一个文档。支持 PDF 文档和常见图像格式。
+          label:
+            en_US: Upload File
+            ja_JP: Upload File
+            pt_BR: Upload File
+            zh_Hans: 上传文件
+          llm_description: ''
+          max: null
+          min: null
+          name: file_path
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: file
+        - auto_generate: null
+          default: '0'
+          form: llm
+          human_description:
+            en_US: Specific pages to process (e.g., "0,2,4-7"). For PDF documents
+              only.
+            ja_JP: Specific pages to process (e.g., "0,2,4-7"). For PDF documents
+              only.
+            pt_BR: Specific pages to process (e.g., "0,2,4-7"). For PDF documents
+              only.
+            zh_Hans: 要处理的特定页面（例如："0,2,4-7"）。仅适用于 PDF 文档。
+          label:
+            en_US: Pages
+            ja_JP: Pages
+            pt_BR: Pages
+            zh_Hans: 页面
+          llm_description: ''
+          max: null
+          min: null
+          name: pages
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Maximum number of images to extract from the document.
+            ja_JP: Maximum number of images to extract from the document.
+            pt_BR: Maximum number of images to extract from the document.
+            zh_Hans: 从文档中提取的最大图像数量。
+          label:
+            en_US: Image Limit
+            ja_JP: Image Limit
+            pt_BR: Image Limit
+            zh_Hans: 图像限制
+          llm_description: ''
+          max: null
+          min: null
+          name: image_limit
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        - auto_generate: null
+          default: 100
+          form: llm
+          human_description:
+            en_US: Minimum size threshold for extracting images (default 100px). Smaller
+              images are ignored.
+            ja_JP: Minimum size threshold for extracting images (default 100px). Smaller
+              images are ignored.
+            pt_BR: Minimum size threshold for extracting images (default 100px). Smaller
+              images are ignored.
+            zh_Hans: 提取图像的最小尺寸阈值（默认 100px），小于该尺寸的将被忽略。
+          label:
+            en_US: Image Minimum Size
+            ja_JP: Image Minimum Size
+            pt_BR: Image Minimum Size
+            zh_Hans: 图像最小尺寸
+          llm_description: ''
+          max: null
+          min: null
+          name: image_min_size
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: number
+        params:
+          file_path: ''
+          image_limit: ''
+          image_min_size: ''
+          pages: ''
+        provider_id: inlei/mistral_ocr/mistral_ocr
+        provider_name: inlei/mistral_ocr/mistral_ocr
+        provider_type: builtin
+        retry_config:
+          max_retries: 3
+          retry_enabled: false
+          retry_interval: 1000
+        selected: false
+        title: Mistral OCR
+        tool_configurations: {}
+        tool_description: Mistral OCR 是一个强大的文档 OCR 处理器，可以从 PDF 文档和图像中提取文本和结构化内容，同时保持文档结构和层次结构。它保留了标题、段落、列表和表格等格式，并以
+          markdown 格式返回结果，便于解析和渲染。
+        tool_label: Mistral OCR
+        tool_name: mistral_ocr_tool
+        tool_node_version: '2'
+        tool_parameters:
+          file_path:
+            type: variable
+            value:
+            - '1754275775364'
+            - paper
+          image_limit:
+            type: constant
+            value: 0
+          image_min_size:
+            type: constant
+            value: 10000000
+          pages:
+            type: mixed
+            value: 0-500
+        type: tool
+      height: 53
+      id: '1754288216777'
+      position:
+        x: 387.446095064991
+        y: 282
+      positionAbsolute:
+        x: 387.446095064991
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: list) -> dict:\n    def split_text(text: str) -> list:\n\
+          \        # 检查输入是否为空\n        if not text:\n            return [\"输入文本为空，无法生成块。\"\
+          ]\n\n        # 将文本按空格分割为单词列表\n        words = text.split()\n        \n \
+          \       # 计算总单词数\n        total_words = len(words)\n        \n        #\
+          \ 设定最小块大小和最大块数\n        min_chunk_size = 1000\n        max_chunks = 24\n\
+          \        \n        # 如果总字数小于最小块大小，返回相应提示\n        if total_words < min_chunk_size:\n\
+          \            return [\"输入文本字数不足，无法生成有效块。\"]\n\n        # 计算合适的 chunksize\n\
+          \        chunksize = max(min_chunk_size, total_words // max_chunks)\n  \
+          \      \n        # 初始化结果列表\n        chunks = []\n        \n        # 初始化起始位置\n\
+          \        start = 0\n        \n        try:\n            while start < total_words:\n\
+          \                # 计算结束位置\n                end = min(start + chunksize,\
+          \ total_words)  # 确保不超出范围\n                \n                # 提取当前块的单词\n\
+          \                chunk = words[start:end]\n                \n          \
+          \      # 如果当前块小于最小块大小，退出循环\n                if len(chunk) < min_chunk_size:\n\
+          \                    break\n                \n                # 将块转换为字符串并添加到结果列表中\n\
+          \                chunks.append(' '.join(chunk))\n                \n    \
+          \            # 更新起始位置，考虑重叠\n                start += chunksize - 60  # 这里的重叠可以根据需要调整\n\
+          \            \n            # 检查最后一个块，如果没有被包含，强制加入\n            if start\
+          \ < total_words and len(' '.join(words[start:])) >= min_chunk_size:\n  \
+          \              chunks.append(' '.join(words[start:]))\n            \n  \
+          \      except Exception as e:\n            return [f\"处理文本时发生错误: {str(e)}\"\
+          ]\n\n        # 如果没有生成任何块，返回相应提示\n        if not chunks:\n            return\
+          \ [\"未能生成任何有效块。\"]\n\n        return chunks\n\n    # 提取 markdown 内容\n  \
+          \  markdown_content = []\n    for entry in arg1:\n        for page in entry.get(\"\
+          pages\", []):\n            markdown_content.append(page.get(\"markdown\"\
+          , \"\"))\n    \n    # 合并所有 markdown 内容\n    combined_markdown = \"\\n\"\
+          .join(markdown_content)\n    \n    # 调用分割函数并返回结果\n    result = split_text(combined_markdown)\n\
+          \    \n    return {\"chunks\": result}"
+        code_language: python3
+        desc: ''
+        outputs:
+          chunks:
+            children: null
+            type: array[string]
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        title: Chunking
+        type: code
+        variables:
+        - value_selector:
+          - '1754288216777'
+          - json
+          value_type: array[object]
+          variable: arg1
+      height: 83
+      id: '1754288836223'
+      position:
+        x: 688
+        y: 282
+      positionAbsolute:
+        x: 688
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        error_handle_mode: terminated
+        height: 204
+        is_parallel: true
+        iterator_input_type: array[string]
+        iterator_selector:
+        - '1754288836223'
+        - chunks
+        output_selector:
+        - '1754293548640'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1754293522491start
+        title: Methodology
+        type: iteration
+        width: 388
+      height: 204
+      id: '1754293522491'
+      position:
+        x: 996.1562125899211
+        y: 79.94777710506814
+      positionAbsolute:
+        x: 996.1562125899211
+        y: 79.94777710506814
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 388
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1754293522491start
+      parentId: '1754293522491'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1020.1562125899211
+        y: 147.94777710506816
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1754293522491'
+        model:
+          completion_params:
+            frequency_penalty: 0.1
+            presence_penalty: 0.1
+            temperature: 0.8
+            top_p: 0.9
+          mode: chat
+          name: gpt-4.1
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: c40135e4-ce50-435b-b4c9-dc120137db2a
+          role: system
+          text: '你是一个智能助手，负责根据给出的论文片段，详细阐述论文中提出的解决方案。你的任务是提供一个深入的解释，帮助读者理解论文的核心方法和其应用。
+
+
+            在阐述解决方案时，请遵循以下步骤：
+
+            1. 阅读用户提供的论文全文和参考格式。
+
+            2. 理解论文中提出的解决方案，包括其理论基础和应用场景。
+
+            3. 提供详细的解释，确保读者能够理解解决方案的各个方面。
+
+            4. 确保解释结构清晰，逻辑连贯。
+
+
+            注意：如果论文片段中没有在阐述他们提出的解决方案，而是在讨论现有问题、相关研究之类的其他内容，说明这一点，然后你不需要给出对应的解决方案阐释。'
+        - id: a4f6b354-a9ec-4911-9a53-63dc7face592
+          role: user
+          text: '基于以下论文片段，参考示例格式，详细介绍这一部分文章提出的解决方案。
+
+             
+
+            以下是一个好的论文分析的示例：
+
+            示例：{{
+
+            ###解决方案
+
+            ARIA框架的核心包括两个关键组件:
+
+            -智能引导请求(IGS):通过结构化自我对话评估不确定性,主动识别知识差距并请求人类专家的针对性指导。
+
+            -人类引导知识适应(HGKA):系统地整合人类反馈,更新带时间戳的知识库,并通过冲突检测和解决机制维护知识一致性。
+
+            ####智能引导请求(Intelligent Guidance Solicitation, IGS)
+
+            ARIA框架的核心组件之一,旨在使代理能够主动识别自身的知识不足,并有针对性地向人类专家请求指导。
+
+            #####目的
+
+               -确定何时需要人类干预
+
+               -制定针对性查询以最大化人类反馈的效用
+
+               -在预算B内有效利用人类专家资源
+
+            #####过程
+
+            - **初始任务处理**:
+
+            -代理使用当前知识库$KR_i$和基础LLM模型$M_{LLM}$生成初步预测$\hat{y}_i$和支持推理$r_i$
+
+            - **结构化自我对话**:
+
+            -代理被提示一组预定义的反思问题$RQ = \{rq_1, rq_2, \ldots, rq_{N_{RQ}}\}$
+
+            -这些问题旨在深入探讨代理对输入$x_i$的理解、$\hat{y}_i$的基础、所做的假设、$KR_i$中知识的相关性和充分性,以及与过去类似实例的一致性
+
+            -代理为每个$rq_k$内部生成答案$ans_k = M_{LLM}(rq_k, x_i, \hat{y}_i, r_i, KR_i)$
+
+            -这些问题-答案对形成自我对话$D_{self_i}$
+
+            - **信心自我评估**:
+
+            -基于$D_{self_i}$,代理进行自我评估以确定其对$\hat{y}_i$的信心
+
+            -生成明确的信心声明$conf_i = \text{AssessConfidence}(D_{self_i})$,其中$conf_i \in
+            \{\text{高}, \text{中等}, \text{低}\}$
+
+            - **干预触发与查询制定**:
+
+            -当$conf_i \in \{\text{中等}, \text{低}\}$且预算约束未被违反时,决定查询专家$(d_i = \text{query\_expert})$
+
+            -如果决定查询,代理将制定查询$q_i = \text{IGS\_FormulateQuery}(D_{self_i})$
+
+            - $D_{self_i}$的内容(即识别出的不确定性源或知识空白$g_i$)直接影响$q_i$的类型和内容
+
+            #####查询类型示例
+
+               -请求正确标签
+
+               -寻求特定规则或解释
+
+               -澄清模糊证据
+
+               -验证假设
+
+            #####优势
+
+               -超越简单的置信度评分,实现结构化自我反思
+
+               -能够识别具体的知识差距和不确定性来源
+
+               -生成针对性强的查询,提高人类反馈的效率
+
+               -通过自我对话提供上下文,帮助人类专家更好地理解代理的推理过程
+
+            #####实现细节
+
+               -使用大型语言模型(如GPT-4或Qwen 2.5-7 B)作为基础模型
+
+               -设计特定于任务的反思问题集
+
+               - $\text{AssessConfidence}$和$\text{IGS\_FormulateQuery}$函数处理自我对话输出
+
+            #####与其他组件的交互
+
+               - IGS的输出$(q_i$和$D^{self}_i)$被提供给人类专家,以获取有针对性和高效的指导$h_i$
+
+               -人类引导知识适应(HGKA)模块使用$h_i$来更新知识库
+
+            ####人类引导知识适应(Human-Guided Knowledge Adaptation, HGKA)
+
+            ARIA框架的核心组件之一，负责将人类专家的反馈整合到代理的知识库中。
+
+            #####知识库结构
+
+               -知识库(KR)由结构化的知识项(k)组成。
+
+               -每个知识项包含：
+
+               -唯一标识符($kid$)、知识内容($K$)、添加时间戳($ts_{added}$)
+
+               -验证时间戳($ts_{validated}$)、有效性状态($S$)、元数据($M_{meta}$)
+
+               -有效性状态可以是：有效、潜在过时或被取代。
+
+            #####处理反馈和更新知识的过程
+
+            -知识项提取：从人类反馈($h_i$)中提取新的知识断言。
+
+            -时间戳和初始存储：为每个提取的知识内容创建新的、带时间戳的有效项。
+
+            -冲突检测与解决：
+
+            -检索相关的现有知识项。
+
+            -比较新旧知识，确定关系（矛盾、超越、更新或一致）。
+
+            -根据比较结果更新知识项状态。
+
+            -主动澄清查询生成：如发现无法解决的模糊性或冲突，生成澄清查询。
+
+            #####时间信息知识检索
+
+               -使用复合评分机制检索相关知识子集。
+
+               -评分考虑因素：有效性权重、时效性评分和语义相关性评分。
+
+               -选择得分最高的项目或超过阈值的项目。
+
+            #####冲突解决机制
+
+               -当新知识与现有知识冲突时，系统会更新旧知识的状态。
+
+               -例如，将旧规则标记为"被取代"，并链接到新规则。
+
+            #####主动澄清
+
+               -遇到模糊或潜在冲突的新信息时，HGKA会生成针对性的澄清查询。
+
+               -这些查询会在下一次人机交互中提出，以获取更精确的信息。
+
+            #####知识整合的灵活性
+
+               - HGKA能处理各类的知识，包括规则、解释、事实陈述和案例示例。
+
+               -系统识别和处理不同程度的知识更新，从微小的修改到完全的替换。
+
+            #####时间敏感性
+
+               -通过时间戳和状态标记，HGKA确保代理使用最新、最相关的知识。
+
+               -这种机制允许代理参考历史知识，同时优先考虑最新的信息。
+
+            #####知识一致性维护
+
+               -通过持续的冲突检测和解决过程，HGKA维护知识库的内部一致性。
+
+               -当发现潜在的不一致时，系统会标记相关项目并寻求进一步澄清。
+
+            }}
+
+
+            以下是论文片段：
+
+            {{#1754293522491.item#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: true
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 119
+      id: '1754293548640'
+      parentId: '1754293522491'
+      position:
+        x: 84.34946251011274
+        y: 65
+      positionAbsolute:
+        x: 1080.5056751000338
+        y: 144.94777710506816
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.3
+            presence_penalty: 0.2
+            temperature: 0.5
+            top_p: 0.85
+          mode: chat
+          name: o4-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 787eb40c-d3b8-49aa-a82a-94f4037bbd1f
+          role: system
+          text: '你是一个智能助手，专门帮助用户从学术论文中提取和整合信息。你的任务是将多个总结片段拼接成一个完整的详细解决方案，帮助读者理解论文的核心方法和其应用。
+
+
+            在整合总结片段时，请遵循以下步骤：
+
+            1. 阅读用户提供的多个论文片段总结。
+
+            2. 理解每个片段的核心内容和其在解决方案中的位置。
+
+            3. 将片段按照逻辑顺序拼接，确保结构清晰，信息连贯。
+
+            4. 提供一个完整的详细解决方案解释。
+
+
+            注意：整合后的解释应保持结构清晰，逻辑连贯，并准确反映论文的核心解决方案。'
+        - id: 4bdd173a-1de8-4c5f-81bd-3bbd8b23e500
+          role: user
+          text: '请根据以下论文片段总结，给出一个完整的详细解决方案。
+
+
+            以下是总结的片段：
+
+            {{#1754293522491.output#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: true
+        title: Sum Methodology
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 119
+      id: '1754294482431'
+      position:
+        x: 2010.0632780418118
+        y: 79.94777710506814
+      positionAbsolute:
+        x: 2010.0632780418118
+        y: 79.94777710506814
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        error_handle_mode: terminated
+        height: 204
+        is_parallel: true
+        iterator_input_type: array[string]
+        iterator_selector:
+        - '1754288836223'
+        - chunks
+        output_selector:
+        - '1754295009332'
+        - text
+        output_type: array[string]
+        parallel_nums: 10
+        selected: false
+        start_node_id: 1754294800439start
+        title: Outline
+        type: iteration
+        width: 388
+      height: 204
+      id: '1754294800439'
+      position:
+        x: 996.1562125899211
+        y: 379.0058602566653
+      positionAbsolute:
+        x: 996.1562125899211
+        y: 379.0058602566653
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 388
+      zIndex: 1
+    - data:
+        desc: ''
+        isInIteration: true
+        selected: false
+        title: ''
+        type: iteration-start
+      draggable: false
+      height: 48
+      id: 1754294800439start
+      parentId: '1754294800439'
+      position:
+        x: 24
+        y: 68
+      positionAbsolute:
+        x: 1020.1562125899211
+        y: 447.0058602566653
+      selectable: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-iteration-start
+      width: 44
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        isInIteration: true
+        isInLoop: false
+        iteration_id: '1754294800439'
+        model:
+          completion_params:
+            frequency_penalty: 0.1
+            presence_penalty: 0.1
+            temperature: 0.8
+            top_p: 0.9
+          mode: chat
+          name: gpt-4.1
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: c303932d-c0fe-4ee3-ac93-faa4131e5a54
+          role: system
+          text: '你是一个智能助手，专门帮助用户从学术论文中提取和总结信息。你的任务是根据用户提供的论文片段，回答特定的问题，并以指定的格式呈现答案。请确保你的总结简洁明了，并准确反映论文的内容。注意理解上下文并提取关键信息。
+
+             
+
+            在回答问题时，请遵循以下步骤：
+
+            1. 阅读用户提供的论文片段。
+
+            2. 理解论文的主要内容和主题。
+
+            3. 提取与用户问题相关的信息。
+
+            4. 用简洁的语言总结信息。
+
+            5. 按照指定的格式呈现答案。
+
+             
+
+            注意：如果论文片段中没有足够的信息来回答某个问题，请将对应位置留空。
+
+             
+
+            格式如下：
+
+            ### 现有问题
+
+            文章在解决什么问题？
+
+            这是个新问题还是老问题，为什么重要/依然重要？
+
+            ### Hypothesis
+
+            这篇论文尝试证实的hypohtesis是什么？
+
+            - **关键发现**
+
+            - **初步结论**
+
+            - **实验验证**
+
+            - **核心假设**
+
+            ### 相关研究
+
+            哪些人/研究和当前主题相关？
+
+            ### 解决方案
+
+            提出解决方案的核心是什么？
+
+            ### 实验设计
+
+            实验是如何设计的？
+
+            ### 数据集和代码
+
+            当前研究中使用的数据集/代码在哪里？
+
+            ### 实验结果
+
+            实验中的数据可以很好的支撑hypothesis吗？
+
+            ### 论文贡献
+
+            这论文有什么贡献？'
+        - id: f4aca533-a484-48c1-9e27-18e35af4746f
+          role: user
+          text: '请从以下论文片段中总结出答案，并按照示例格式回答问题。以下是一个好的论文分析的示例：
+
+            示例：{{
+
+            ###现有问题
+
+            本文旨在解决大语言模型(LLM)代理在动态环境中难以适应和学习的问题。具体来说,在规则和所需领域知识频繁变化的场景下(如合规监管和用户风险筛查),现有的LLM代理无法有效地在实际操作中适应新知识。这是一个长期存在但日益重要的问题,因为:
+
+            -随着LLM在各行各业的广泛应用,其在动态环境中的适应性变得至关重要。
+
+            -传统方法如离线微调和标准提示无法满足实时学习和适应的需求。
+
+            -在快速变化的领域(如金融合规),代理需要能够持续学习和更新知识,以保持准确性和合规性。
+
+            ### Hypohtesis
+
+            - **关键发现**: ARIA框架能够通过结构化自我评估和人机交互,实现LLM代理在测试时的有效学习。
+
+            - **初步结论**: ARIA显著提高了代理在动态环境中的适应性和准确性。
+
+            - **实验验证**:在TikTok Pay的客户尽职调查名称筛查任务和公共数据集上的实验证实了ARIA的有效性。
+
+            - **核心假设**:通过智能引导请求(IGS)和人类引导知识适应(HGKA)机制, LLM代理可以在测试时持续学习和适应,从而在动态环境中保持高性能。
+
+            ###相关研究
+
+            -测试时学习(LTT):包括上下文学习、检索增强生成(RAG)和测试时微调等方法。
+
+            -人机协同(HITL):如基于人类反馈的强化学习(RLHF)等方法。
+
+            -自学习代理:如Self-Refine、Reflexion和多代理辩论等方法。
+
+             
+
+            ###解决方案
+
+            ARIA框架的核心包括两个关键组件:
+
+            -智能引导请求(IGS):通过结构化自我对话评估不确定性,主动识别知识差距并请求人类专家的针对性指导。
+
+            -人类引导知识适应(HGKA):系统地整合人类反馈,更新带时间戳的知识库,并通过冲突检测和解决机制维护知识一致性。
+
+            ###实验设计
+
+            -在TikTok Pay的客户尽职调查(CDD)名称筛查任务上评估ARIA。
+
+            -使用公开可用的合同理解阿提库斯数据集(CUAD)进行法律文本分析任务的评估。
+
+            -与多个基线方法进行比较,包括静态代理、离线微调、RAG代理和主动学习方法等。
+
+            -评估指标包括灵敏度、特异性和准确率。
+
+             
+
+            ###数据集和代码
+
+            - TikTok Pay的CDD名称筛查任务数据集(11,846个真实案例)。
+
+            - CUAD数据集(13,101个合同条款)。
+
+            -代码可在https://github.com/yf-he/aria获取 。
+
+             
+
+            ###实验结果
+
+            实验结果表明, ARIA在各种查询预算下的灵敏度和特异性方面始终优于其他方法,展示了其卓越的适应能力。在TikTok Pay任务中, ARIA
+            (GPT-4o)在B=1000时实现了0.8910的灵敏度和0.8026的特异性。在CUAD数据集上, ARIA (GPT-4o)在B=2000时达到0.6358的准确率。这些结果有力地支持了ARIA能够在测试时有效学习和适应的假设。
+
+            ###论文贡献
+
+            -提出了ARIA框架,实现了LLM代理在测试时通过人机协同指导进行持续学习和适应。
+
+            -详细阐述了智能引导请求(IGS)和人类引导知识适应(HGKA)的核心机制。
+
+            -通过在实际业务场景(TikTok Pay)和公共数据集上的实验,验证了ARIA的有效性。
+
+            -为解决LLM代理在动态环境中的适应性问题提供了新的思路和方法。
+
+            }}
+
+             
+
+            以下是论文的一部分，完成你能完成的部分：
+
+            {{#1754294800439.item#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: true
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 119
+      id: '1754295009332'
+      parentId: '1754294800439'
+      position:
+        x: 98.13384277007708
+        y: 65
+      positionAbsolute:
+        x: 1094.2900553599982
+        y: 444.0058602566653
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+      zIndex: 1002
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.1
+            presence_penalty: 0.1
+            temperature: 0.8
+            top_p: 0.9
+          mode: chat
+          name: o4-mini
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: b355c7d3-86ec-4b36-a213-c56c3052fcca
+          role: system
+          text: '你是一个智能助手，专门帮助用户从学术论文的片段中提取和总结信息。你的任务是根据用户提供的论文片段，回答特定的问题，并以指定的格式呈现答案。请确保你的总结简洁明了，并准确反映论文的内容。
+
+
+            在回答问题时，请遵循以下步骤：
+
+            1. 阅读用户提供的论文片段。
+
+            2. 理解论文的主要内容和主题。
+
+            3. 提取与用户问题相关的信息。
+
+            4. 用简洁的语言总结信息。
+
+            5. 按照指定的格式呈现答案。
+
+
+            注意：如果论文片段中没有足够的信息来回答某个问题，请明确告知用户。
+
+
+            格式如下：
+
+            ### 现有问题
+
+            ### Hypothesis
+
+            ### 相关研究
+
+            ### 解决方案
+
+            ### 实验设计
+
+            ### 数据集和代码
+
+            ### 实验结果
+
+            ### 论文贡献'
+        - id: a8e0a837-1d6f-417d-810d-627e5863ed31
+          role: user
+          text: '请从以下论文片段中总结出答案，并按照示例格式回答问题。以下是一个参考的总结文本：
+
+            {{
+
+            # GNN-RAG
+
+             
+
+            ## 现有问题
+
+             
+
+            这篇论文主要解决知识图谱问答 (KGQA) 任务中的检索和推理问题。具体来说, 作者提出了GNN-RAG 方法, 将图神经网络 (GNN)
+            的图结构推理能力与大语言模型 (LLM) 的自然语言理解能力相结合, 以提高 KGQA 的性能。
+
+            KGQA 任务本身很重要, 因为它能帮助系统从结构化知识中回答自然语言问题。随着 LLM的发展, 如何有效利用 LLM 进行 KGQA 成为新的研究热点。这个问题依然重要:
+
+            - LLM 虽然强大但容易产生幻觉
+
+            - 知识图谱中包含复杂的多跳关系, 需要有效的推理机制
+
+            - 现有方法在处理复杂问题时表现不佳
+
+             
+
+            ## Hypothesis
+
+            - GNN 适合处理知识图谱中的复杂结构信息和多跳推理
+
+            - LLM 适合理解自然语言问题和生成答案
+
+            - 将两者结合可以互补各自的优势, 提升 KGQA 性能
+
+             
+
+            ## 相关研究
+
+             
+
+            - 基于嵌入的方法 (EmbedKGQA 等)
+
+            - 基于 GNN 的方法 (GraftNet, NSM 等)
+
+            - 基于 LLM 的方法 (ToG, RoG 等)
+
+            - 结合 GNN 和 LLM 的方法 (G-Retriever 等)
+
+             
+
+            ## 解决方案
+
+             
+
+            KGQA 可以被视为一个节点分类问题，其中 KG 实体被分类为给定问题的答案与非答案。
+
+             
+
+            GNN-RAG 框架主要包含三个关键组件：
+
+             
+
+            1. GNN 推理器：在知识图谱子图上进行推理
+
+            2. 路径提取器：获取推理路径
+
+            3. LLM 推理器：基于检索到的信息进行最终推理
+
+             
+
+            ## 框架优势
+
+             
+
+            在多个方面显示出优势：
+
+            - 结合了 GNN 的图结构处理能力和 LLM 的语言理解能力
+
+            - 无需额外的 LLM 调用就能提升性能
+
+            - 在复杂问题上表现优异
+
+            - 可以与不同的 LLM 集成
+
+             
+
+            ## 实验设计
+
+             
+
+            实验主要在两个 KGQA 基准数据集上进行:
+
+            - WebQSP: 包含 4,737 个问题, 需要 2 跳推理
+
+            - CWQ: 包含 34,699 个复杂问题, 需要 4 跳推理
+
+             
+
+            实验比较了不同类型方法的性能, 并进行了消融实验分析各组件的作用。
+
+             
+
+            ## 数据集和代码
+
+             
+
+            代码和实验结果公开在: https://github.com/cmavro/GNN-RAG
+
+             
+
+            ## 性能表现
+
+             
+
+            - 多跳问题：提升 8.9-15.5%
+
+            - 效率：比其他方法需要更少的 LLM 调用
+
+            - 准确性：可以匹配或超越 GPT-4 的性能
+
+             
+
+            ## 实验结果
+
+             
+
+            - GNN-RAG 在多跳和多实体问题上表现优异
+
+            - 相比单独使用 LLM 或 GNN, 结合两者能获得更好的性能
+
+            - 实验结果显示 GNN-RAG 可以达到或超过 GPT-4 的性能
+
+             
+
+            ## 论文贡献
+
+             
+
+            提出新的 GNN-RAG 框架结合 GNN 和 LLM 的优势，在两个基准数据集上达到 SOTA 性能
+
+            }}
+
+             
+
+            接下来是论文的各个片段分别的总结：
+
+            {{#1754294800439.output#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: true
+        title: Sum Outline
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 119
+      id: '1754295119798'
+      position:
+        x: 1435.2872977509405
+        y: 379.0058602566653
+      positionAbsolute:
+        x: 1435.2872977509405
+        y: 379.0058602566653
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def main(arg1: str) -> dict:\n    # 如果输入是一个列表，将其转换为字符串\n    if isinstance(arg1,\
+          \ list):\n        arg1 = ' '.join(str(item) for item in arg1)\n\n    words\
+          \ = arg1.split()\n    first_500_words = ' '.join(words[:500])\n    return\
+          \ {\n        \"First_500\": first_500_words,\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          First_500:
+            children: null
+            type: string
+        selected: false
+        title: First 500
+        type: code
+        variables:
+        - value_selector:
+          - '1754288836223'
+          - chunks
+          value_type: array[string]
+          variable: arg1
+      height: 53
+      id: '1754297756839'
+      position:
+        x: 1722.2433250593529
+        y: 379.0058602566653
+      positionAbsolute:
+        x: 1722.2433250593529
+        y: 379.0058602566653
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.1
+            presence_penalty: 0.1
+            temperature: 0.8
+            top_p: 0.9
+          mode: chat
+          name: gpt-4.1
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: ec7000e0-1f22-4e39-98d8-0ab0569243cd
+          role: system
+          text: '你是一个智能助手，负责根据论文的摘要和生成的报告大纲，撰写一段简短的总结。你的任务是用不超过100字的篇幅，清晰地描述论文提出的方法和解决的问题。请确保总结内容简洁明了，并准确反映论文的核心贡献。
+
+
+            在撰写总结时，请遵循以下步骤：
+
+            1. 阅读用户提供的论文摘要和报告大纲。
+
+            2. 理解论文的核心方法和解决的问题。
+
+            3. 用非常简洁的语言撰写总结。
+
+            4. 确保总结不超过80字。
+
+
+            注意：总结应重点突出论文的方法和解决的问题，避免冗长的背景信息。'
+        - id: 2a01d70a-5c46-42e9-abba-ad1b6c76486a
+          role: user
+          text: '请根据以下论文摘要（论文摘要文本可能包括标题、摘要和参考文献等部分，请仅专注于摘要部分）和报告大纲，撰写一段不超过100字的总结，关注于这篇文章提出了什么方法、解决了什么问题，：
+
+            abstract：
+
+            {{#1754297756839.First_500#}}
+
+            report：
+
+            {{#1754295119798.text#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: true
+        title: Abstract
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 119
+      id: '1754306410872'
+      position:
+        x: 2010.0632780418118
+        y: 379.0058602566653
+      positionAbsolute:
+        x: 2010.0632780418118
+        y: 379.0058602566653
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            frequency_penalty: 0.3
+            presence_penalty: 0.2
+            temperature: 0.5
+            top_p: 0.85
+          mode: chat
+          name: gpt-4.1
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 18cf2642-4938-4536-b368-55543e5254e2
+          role: system
+          text: '你是一个智能助手，负责根据用户提供的详细解决方案，替换原先报告大纲中的解决方案部分。你的任务是确保替换后的大纲结构完整，并准确反映论文的核心内容；确保替换后的解决方案部分完整且详细，不忽略我给出的任何细节，不要做任何删减。
+
+
+            在替换解决方案时，请遵循以下步骤：
+
+            1. 阅读用户提供的详细解决方案。
+
+            2. 找到报告大纲中的解决方案部分。
+
+            3. 用详细解决方案替换原先的解决方案部分，不要做任何删减。
+
+            4. 确保替换后的大纲结构完整，信息连贯。
+
+
+            注意：替换后的大纲和替换后的解决方案部分应保持原有的格式和结构，同时注意整体结构的一致性。'
+        - id: 7b00d1de-0a80-4528-a9d3-a7a704cd0c9f
+          role: user
+          text: '请根据以下详细解决方案，替换报告大纲中的解决方案部分：
+
+
+            详细解决方案：
+
+            {{#1754294482431.text#}}
+
+
+            报告大纲：
+
+            {{#1754295119798.text#}}'
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1000
+        selected: false
+        structured_output_enabled: true
+        title: Improved Outline
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 119
+      id: '1754311850684'
+      position:
+        x: 2292.2441736194437
+        y: 225.46214270450872
+      positionAbsolute:
+        x: 2292.2441736194437
+        y: 225.46214270450872
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "def replace_brackets(text: str) -> str:\n    return text.replace(\"\
+          \\\\(\", \"$\").replace(\"\\\\)\", \"$\")\n\ndef main(arg1: str, arg2: str)\
+          \ -> dict:\n    # 对输入参数进行替换\n    abstract = replace_brackets(arg1)\n   \
+          \ content = replace_brackets(arg2)\n\n    # 格式化输出字符串\n    formatted_string\
+          \ = f\"\"\"## 摘要\n\n{abstract}\n\n---\n\n{content}\n\"\"\"\n\n    # 返回结果字典\n\
+          \    return {\n        \"result\": formatted_string\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: Formalize
+        type: code
+        variables:
+        - value_selector:
+          - '1754306410872'
+          - text
+          value_type: string
+          variable: arg1
+        - value_selector:
+          - '1754311850684'
+          - text
+          value_type: string
+          variable: arg2
+      height: 53
+      id: '1754312643085'
+      position:
+        x: 2576.539858254808
+        y: 225.46214270450872
+      positionAbsolute:
+        x: 2576.539858254808
+        y: 225.46214270450872
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1754312643085'
+          - result
+          value_type: string
+          variable: result
+        selected: false
+        title: 结束
+        type: end
+      height: 89
+      id: '1754314355707'
+      position:
+        x: 2865.3826925897047
+        y: 225.46214270450872
+      positionAbsolute:
+        x: 2865.3826925897047
+        y: 225.46214270450872
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 75.13710257215706
+      y: 266.62744485780274
+      zoom: 0.3789291416276005
